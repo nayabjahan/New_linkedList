@@ -11,6 +11,11 @@ public class LinkedListMain {
         myLinkedList.insertNode(firstNode, secondNode);
         myLinkedList.display();
 
+        INode deletedNode = myLinkedList.deleteFirst();
+        System.out.println("The deleted key value is:"+deletedNode.getKey());
+        System.out.println("Final linked list is:");
+        myLinkedList.display();
+
     }
 }
 
