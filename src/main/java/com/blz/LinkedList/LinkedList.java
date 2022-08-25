@@ -14,7 +14,6 @@ public class LinkedList {
         tail = newNode;
         size++;
     }
-
     public void display() {
         INode current = head;
         if (head == null)
@@ -28,6 +27,16 @@ public class LinkedList {
             }
             current = current.getNext();
         }
-
+    }
+    public void append(MyNode newNode){
+        if(head==null){
+            head= newNode;
+        }
+        if(tail==null){
+            tail=newNode;
+        }else{
+            tail.setNext(newNode);
+            tail = newNode;
+        }
     }
 }
