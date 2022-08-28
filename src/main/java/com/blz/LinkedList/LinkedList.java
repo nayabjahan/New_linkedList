@@ -14,6 +14,7 @@ public class LinkedList {
         tail = newNode;
         size++;
     }
+
     public void display() {
         INode current = head;
         if (head == null)
@@ -28,22 +29,24 @@ public class LinkedList {
             current = current.getNext();
         }
     }
-    public void append(MyNode newNode){
-        if(head==null){
-            head= newNode;
+
+    public void append(MyNode newNode) {
+        if (head == null) {
+            head = newNode;
         }
-        if(tail==null){
-            tail=newNode;
-        }else{
+        if (tail == null) {
+            tail = newNode;
+        } else {
             tail.setNext(newNode);
             tail = newNode;
         }
     }
-    public void insertNode(INode myNode, INode newNode){
 
-    INode tempNode = myNode.getNext();
-    myNode.setNext(newNode);
-    newNode.setNext(tempNode);
+    public void insertNode(INode myNode, INode newNode) {
+
+        INode tempNode = myNode.getNext();
+        myNode.setNext(newNode);
+        newNode.setNext(tempNode);
 
     }
 
@@ -51,6 +54,22 @@ public class LinkedList {
         MyNode temporaryNode = this.head;
         this.head = (MyNode) this.head.getNext();
         return temporaryNode;
+    }
 
+    public void popLast() {
+
+        INode tempNode = this.head;
+        if (this.head == this.tail) {
+            System.out.println("single element found");
+        } else {
+            tempNode.getNext().getNext();
+        } {
+            tempNode = tempNode.getNext();
+        }
+        tempNode.setNext(null);
     }
 }
+
+
+
+
