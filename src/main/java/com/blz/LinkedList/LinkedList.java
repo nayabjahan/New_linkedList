@@ -68,6 +68,24 @@ public class LinkedList {
         }
         tempNode.setNext(null);
     }
+    public MyNode search(int key) {
+        INode temporaryNode = head;
+        boolean isFound = false;
+        while (temporaryNode != null  && isFound == false) {
+            if(temporaryNode.getKey().equals(key)) {
+                isFound = true;
+            }
+            else {
+
+                temporaryNode = temporaryNode.getNext();
+            }
+        }
+        if(isFound)
+            return (MyNode) temporaryNode;
+        else {
+            return head;
+        }
+    }
 }
 
 

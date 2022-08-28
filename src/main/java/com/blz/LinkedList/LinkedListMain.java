@@ -13,8 +13,13 @@ public class LinkedListMain {
         System.out.println("Linked list before deletion: ");
         myLinkedList.display();
 
-        myLinkedList.popLast();
-        System.out.print("\nLinked List Sequence after deleting Last Element using Pop Method : ");
+        MyNode searchedKey = myLinkedList.search(30);
+        if(searchedKey.getKey().equals(30)) {
+            System.out.println("Key Found");
+        }
+        else {
+            System.out.println("Key Not Found");
+        }
         myLinkedList.display();
 
     }
