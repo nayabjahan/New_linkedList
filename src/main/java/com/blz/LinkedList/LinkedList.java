@@ -63,27 +63,40 @@ public class LinkedList {
             System.out.println("single element found");
         } else {
             tempNode.getNext().getNext();
-        } {
+        }
+        {
             tempNode = tempNode.getNext();
         }
         tempNode.setNext(null);
     }
+
     public MyNode search(int key) {
         INode temporaryNode = head;
         boolean isFound = false;
-        while (temporaryNode != null  && isFound == false) {
-            if(temporaryNode.getKey().equals(key)) {
+        while (temporaryNode != null && isFound == false) {
+            if (temporaryNode.getKey().equals(key)) {
                 isFound = true;
-            }
-            else {
+            } else {
 
                 temporaryNode = temporaryNode.getNext();
             }
         }
-        if(isFound)
+        if (isFound)
             return (MyNode) temporaryNode;
         else {
             return head;
+        }
+    }
+
+    public void insertWithKey(int key, INode newNode) {
+
+        INode nodeWithKeyValue = search(key);
+        if (nodeWithKeyValue.getKey().equals(key)) {
+            INode temporaryNode = nodeWithKeyValue.getNext();
+            nodeWithKeyValue.setNext(newNode);
+            newNode.setNext(temporaryNode);
+        } else {
+            System.out.println("Key Node Found");
         }
     }
 }
